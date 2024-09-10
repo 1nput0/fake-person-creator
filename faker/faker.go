@@ -1,6 +1,10 @@
 package faker
 
-import "github.com/Pallinder/go-randomdata"
+import (
+	"fmt"
+
+	"github.com/Pallinder/go-randomdata"
+)
 
 // basic Person struct for generating fast fake data
 type Person struct {
@@ -20,4 +24,9 @@ func NewMalePerson() Person {
 	}
 
 	return newMale
+}
+
+// prints the attributes of the person to the console
+func (p Person) DisplayPerson() {
+	fmt.Printf("\nFirst name: %s\nLast name: %s\nE-Mail: %s\nCountry: %s\n", p.firstName, p.lastName, p.email, p.country)
 }
