@@ -12,7 +12,7 @@ func main() {
 	r := mux.NewRouter()
 
 	// defining api endpoints
-	r.HandleFunc("/api/male-person", getMaleRandomPerson).Methods("GET")
+	r.HandleFunc("/api/male-person", enableCORS(getMaleRandomPerson)).Methods("GET")
 
 	// start the server
 	http.ListenAndServe(":8080", r)
@@ -32,4 +32,11 @@ func getMaleRandomPerson(w http.ResponseWriter, r *http.Request) {
 	// Set the content type and write the response
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(jsonData)
+}
+
+func enableCORS(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		next(w, r)
+	}
 }
