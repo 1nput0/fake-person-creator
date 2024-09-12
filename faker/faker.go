@@ -8,12 +8,12 @@ import (
 
 // basic Person struct for generating fast fake data
 type Person struct {
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	Email     string `json:"email"`
-	Country   string `json:"country"`
-	State     string `json:"state"`
-	Address   string `json:"address"`
+	FirstName string `json:"FirstName"`
+	LastName  string `json:"LastName"`
+	Email     string `json:"Email"`
+	Country   string `json:"Country"`
+	State     string `json:"State"`
+	Address   string `json:"Address"`
 }
 
 // constructor for creating a new male person with random fake data
