@@ -8,23 +8,23 @@ import (
 
 // basic Person struct for generating fast fake data
 type Person struct {
-	firstName string
-	lastName  string
-	email     string
-	country   string
-	state     string
-	address   string
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+	Email     string `json:"email"`
+	Country   string `json:"country"`
+	State     string `json:"state"`
+	Address   string `json:"address"`
 }
 
 // constructor for creating a new male person with random fake data
 func NewMalePerson() Person {
 	newMale := Person{
-		firstName: randomdata.FirstName(randomdata.Male),
-		lastName:  randomdata.LastName(),
-		email:     randomdata.Email(),
-		country:   "USA",
-		state:     randomdata.State(randomdata.Large),
-		address:   randomdata.Address(),
+		FirstName: randomdata.FirstName(randomdata.Male),
+		LastName:  randomdata.LastName(),
+		Email:     randomdata.Email(),
+		Country:   "USA",
+		State:     randomdata.State(randomdata.Large),
+		Address:   randomdata.Address(),
 	}
 
 	return newMale
@@ -32,12 +32,12 @@ func NewMalePerson() Person {
 
 func NewFemalePerson() Person {
 	newMale := Person{
-		firstName: randomdata.FirstName(randomdata.Female),
-		lastName:  randomdata.LastName(),
-		email:     randomdata.Email(),
-		country:   "USA",
-		state:     randomdata.State(randomdata.Large),
-		address:   randomdata.Address(),
+		FirstName: randomdata.FirstName(randomdata.Female),
+		LastName:  randomdata.LastName(),
+		Email:     randomdata.Email(),
+		Country:   "USA",
+		State:     randomdata.State(randomdata.Large),
+		Address:   randomdata.Address(),
 	}
 
 	return newMale
@@ -45,6 +45,6 @@ func NewFemalePerson() Person {
 
 // prints the attributes of the person to the console
 func (p Person) DisplayPerson() {
-	displayInfo := fmt.Sprintf("\nFirst name: %s\nLast name: %s\nE-Mail: %s\nCountry: %s\nState: %s\nAddress: %s", p.firstName, p.lastName, p.email, p.country, p.state, p.address)
+	displayInfo := fmt.Sprintf("\nFirst name: %s\nLast name: %s\nE-Mail: %s\nCountry: %s\nState: %s\nAddress: %s", p.FirstName, p.LastName, p.Email, p.Country, p.State, p.Address)
 	fmt.Println(displayInfo)
 }
