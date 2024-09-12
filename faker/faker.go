@@ -12,6 +12,8 @@ type Person struct {
 	lastName  string
 	email     string
 	country   string
+	state     string
+	address   string
 }
 
 // constructor for creating a new male person with random fake data
@@ -20,7 +22,9 @@ func NewMalePerson() Person {
 		firstName: randomdata.FirstName(randomdata.Male),
 		lastName:  randomdata.LastName(),
 		email:     randomdata.Email(),
-		country:   randomdata.Country(randomdata.FullCountry),
+		country:   "USA",
+		state:     randomdata.State(randomdata.Large),
+		address:   randomdata.Address(),
 	}
 
 	return newMale
@@ -28,5 +32,6 @@ func NewMalePerson() Person {
 
 // prints the attributes of the person to the console
 func (p Person) DisplayPerson() {
-	fmt.Printf("\nFirst name: %s\nLast name: %s\nE-Mail: %s\nCountry: %s\n", p.firstName, p.lastName, p.email, p.country)
+	displayInfo := fmt.Sprintf("\nFirst name: %s\nLast name: %s\nE-Mail: %s\nCountry: %s\nState: %s\nAddress: %s", p.firstName, p.lastName, p.email, p.country, p.state, p.address)
+	fmt.Println(displayInfo)
 }
