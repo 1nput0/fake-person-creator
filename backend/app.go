@@ -34,6 +34,7 @@ func getMaleRandomPerson(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonData)
 }
 
+// enable CORS (Cross-Origin Resource Sharing)
 func enableCORS(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
