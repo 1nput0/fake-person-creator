@@ -13,6 +13,7 @@ func main() {
 
 	// defining api endpoints
 	r.HandleFunc("/api/male-person", enableCORS(getMaleRandomPerson)).Methods("GET")
+	r.HandleFunc("/api/female-person", enableCORS(getFemaleRandomPerson)).Methods("GET")
 
 	// start the server
 	http.ListenAndServe(":8080", r)
@@ -30,6 +31,19 @@ func getMaleRandomPerson(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Set the content type and write the response
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(jsonData)
+}
+
+func getFemaleRandomPerson(w http.ResponseWriter, r *http.Request) {
+	newFemale := faker.NewFemalePerson()
+
+	jsonData, err := json.Marshal(newFemale)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(jsonData)
 }
