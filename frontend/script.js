@@ -1,7 +1,21 @@
 document
   .getElementById("generateButton")
   .addEventListener("click", function () {
-    fetch("http://localhost:8080/api/male-person")
+    const gender = document.getElementById("genderSelect").value;
+    let apiUrl = "http://localhost:8080/api/";
+
+    switch (gender) {
+      case "male":
+        apiUrl += "male-person";
+        break;
+      case "female":
+        apiUrl += "female-person";
+        break;
+      default:
+        apiUrl += "random-person";
+    }
+
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         document.getElementById(

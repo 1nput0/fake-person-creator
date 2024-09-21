@@ -68,3 +68,30 @@ button:hover {
 .hidden {
     display: none;
 }
+
+.input-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group label {
+    margin-right: 0.5rem;
+    color: #333;
+}
+
+#genderSelect {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#genderSelect:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
