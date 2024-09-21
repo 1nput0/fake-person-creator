@@ -4,12 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fake Person Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Generate a fake person!</h1>
-    <p>Click on this button to generate a fake person</p>
-    <button id="generateButton">Generate</button>
-    <div id="result"></div>
+    <div class="container">
+      <h1>Generate a Fake Person!</h1>
+      <p>Click on this button to generate a fake person</p>
+      <button id="generateButton">Generate</button>
+      <div id="result" class="hidden">
+        <h2>Generated Profile:</h2>
+        <div class="profile-info">
+          <p><strong>Name:</strong> <span id="name"></span></p>
+          <p><strong>Email:</strong> <span id="email"></span></p>
+          <p><strong>Country:</strong> <span id="country"></span></p>
+          <p><strong>State:</strong> <span id="state"></span></p>
+          <p><strong>Address:</strong> <span id="address"></span></p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
